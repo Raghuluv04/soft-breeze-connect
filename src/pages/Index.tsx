@@ -1,10 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Utensils, Users, Clock } from "lucide-react";
+import { ArrowRight, Utensils, Users, Clock, FileText, MessageCircle, HelpCircle } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="py-4 px-4 sm:px-6 lg:px-8 border-b">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link to="/" className="text-xl font-bold">Food Bridge</Link>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link to="/guidelines" className="flex items-center px-4 py-2 text-sm hover:text-[#BACBBE]">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Guidelines
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link to="/faq" className="flex items-center px-4 py-2 text-sm hover:text-[#BACBBE]">
+                  <HelpCircle className="w-4 h-4 mr-2" />
+                  FAQ
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link to="/contact" className="flex items-center px-4 py-2 text-sm hover:text-[#BACBBE]">
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Contact
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
